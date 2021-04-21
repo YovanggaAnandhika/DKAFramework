@@ -10,3 +10,9 @@
 [submodule "C#"]
 	path = "C#"
 	url = https://github.com/YovanggaAnandhika/DKACHastagFramework.git
+[submodule "ASP"]
+	path = ASP
+	url = https://github.com/YovanggaAnandhika/DKAASPFramework.git
+[submodule "PYTHON"]
+	path = PYTHON
+	url = https://github.com/YovanggaAnandhika/DKAPythonFramework.git
