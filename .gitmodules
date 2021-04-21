@@ -4,3 +4,6 @@
 [submodule "PHP"]
 	path = PHP
 	url = https://github.com/YovanggaAnandhika/DKAPHPFramework.git
+[submodule "ANDROID"]
+	path = ANDROID
+	url = https://github.com/YovanggaAnandhika/DKAAndroidFramework.git
