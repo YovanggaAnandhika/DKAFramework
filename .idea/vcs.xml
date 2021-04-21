@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/ASP" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/C#" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/JS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PERL" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PHP" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PYTHON" vcs="Git" />
   </component>
