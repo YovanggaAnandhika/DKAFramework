@@ -7,3 +7,6 @@
 [submodule "ANDROID"]
 	path = ANDROID
 	url = https://github.com/YovanggaAnandhika/DKAAndroidFramework.git
+[submodule "C#"]
+	path = "C#"
+	url = https://github.com/YovanggaAnandhika/DKACHastagFramework.git
