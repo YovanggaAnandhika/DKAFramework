@@ -16,3 +16,6 @@
 [submodule "PYTHON"]
 	path = PYTHON
 	url = https://github.com/YovanggaAnandhika/DKAPythonFramework.git
+[submodule "PERL"]
+	path = PERL
+	url = https://github.com/YovanggaAnandhika/DKAPerlFramework.git
