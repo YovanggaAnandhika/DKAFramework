@@ -1,0 +1,297 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+# ------------------------------------------------------------
+# SCHEMA DUMP FOR TABLE: zolah_berita_detail
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `zolah_berita_detail` (
+  `id_berita` bigint(20) NOT NULL AUTO_INCREMENT,
+  `judul_berita` text NOT NULL,
+  `seo_url` text NOT NULL,
+  `id_kategori` bigint(20) NOT NULL,
+  `isi_berita` text NOT NULL,
+  `gambar` text NOT NULL,
+  `id_user` bigint(20) NOT NULL,
+  `waktu_berita` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` enum('true', 'false') NOT NULL,
+  PRIMARY KEY (`id_berita`),
+  KEY `id_kategori` (`id_kategori`)
+) ENGINE = InnoDB AUTO_INCREMENT = 12 DEFAULT CHARSET = utf8mb4;
+
+# ------------------------------------------------------------
+# SCHEMA DUMP FOR TABLE: zolah_kategori
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `zolah_kategori` (
+  `id_kategori` bigint(11) NOT NULL AUTO_INCREMENT,
+  `nama_kategori` text NOT NULL,
+  PRIMARY KEY (`id_kategori`)
+) ENGINE = InnoDB AUTO_INCREMENT = 5 DEFAULT CHARSET = utf8mb4;
+
+# ------------------------------------------------------------
+# SCHEMA DUMP FOR TABLE: zolah_user_login
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `zolah_user_login` (
+  `id_user` bigint(20) NOT NULL AUTO_INCREMENT,
+  `nama_lengkap` text NOT NULL,
+  `username` longtext NOT NULL,
+  `password` longtext NOT NULL,
+  `level_access` enum('admin', 'user') NOT NULL,
+  `waktu` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id_user`)
+) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4;
+
+# ------------------------------------------------------------
+# DATA DUMP FOR TABLE: zolah_berita_detail
+# ------------------------------------------------------------
+
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    1,
+    'Ini Dia 2 Orang yang Didakwa Rugikan Negara Rp 63 M',
+    'ini-kata-dia1.html',
+    1,
+    'Lebih lanjut, Syafrin menjelaskan SIKM Jakarta berlaku pada periode 6-17 Mei. Masyarakat pada periode tersebut wajib menunjukkan SIKM ketika hendak keluar dan masuk Ibu Kota.\r\n\r\n\"SIKM berlaku mulai tanggal 6-17 Mei 2021,\" katanya.\r\n\r\nSebelumnya diberitakan, pemerintah lewat Satgas Penanganan Corona menerbitkan adendum (tambahan) SE 13/2021 tentang Peniadaan Mudik Hari Raya Idulfitri Tahun 1442 Hijriah dan Upaya Pengendalian Penyebaran Corona Virus Disease 2019 (COVID-19) Selama Bulan Suci Ramadan 1442 Hijriah. Aturan ini berlaku pada H-14 peniadaan mudik (22 April-5 Mei 2021) dan H+7 peniadaan mudik (18-24 Mei 2021). Adendum ini diteken pada 21 April 2021.',
+    'https://peacemakersnetwork.org/wp-content/uploads/2019/09/placeholder.jpg',
+    1,
+    '2021-04-21 05:22:39',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    2,
+    'DKI Tak Berlakukan SIKM pada 22 April-5 Mei dan 18-24 Mei',
+    'ini-kata-dia2.html',
+    2,
+    'Jakarta - Pemprov DKI Jakarta tidak akan memberlakukan surat izin masuk kendaraan (SIKM) selama dua periode pengetatan syarat perjalanan, yaitu 22 April-5 Mei dan 18-24 Mei. Kepala Dinas Perhubungan DKI Jakarta, Syafrin Liputo, menyebut hal ini diputuskan demi menyesuaikan dengan isi Addendum Surat Edaran Nomor 13 Tahun 2021.\r\nSyafrin menerangkan ada dua periode SIKM Jakarta tidak berlaku, yakni pada 22 April-5 Mei 2021 dan 18 Mei-24 Mei 2021. Mengacu pada aturan tersebut, Pemprov DKI hanya menerapkan syarat rapid antigen 1×24 jam sebelum waktu perjalanan.\r\n\r\n\"Tidak, tidak ada SIKM. Hanya pengetatan bahwa yang bersangkutan rapid antigen sebelumnya tiga hari menjadi satu hari. Selama dua periode waktu itu tidak diperlukan SIKM,\" kata Syafrin Liputo di Balai Kota DKI Jakarta, Jl Medan Merdeka Selatan, Kamis (22/4/2021).',
+    'https://www.mcwnews.com/uploads/berita/berita_OTTdiSulsel,KPKTangkapGubernurNurdinAbdullah.jpeg',
+    1,
+    '2021-04-20 23:05:49',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    4,
+    'Ini Dia 2 Orang yang Didakwa Rugikan Negara Rp 63 Ms',
+    'ini-kata-dia3.html',
+    2,
+    'Lebih lanjut, Syafrin menjelaskan SIKM Jakarta berlaku pada periode 6-17 Mei. Masyarakat pada periode tersebut wajib menunjukkan SIKM ketika hendak keluar dan masuk Ibu Kota.\r\n\r\n\"SIKM berlaku mulai tanggal 6-17 Mei 2021,\" katanya.\r\n\r\nSebelumnya diberitakan, pemerintah lewat Satgas Penanganan Corona menerbitkan adendum (tambahan) SE 13/2021 tentang Peniadaan Mudik Hari Raya Idulfitri Tahun 1442 Hijriah dan Upaya Pengendalian Penyebaran Corona Virus Disease 2019 (COVID-19) Selama Bulan Suci Ramadan 1442 Hijriah. Aturan ini berlaku pada H-14 peniadaan mudik (22 April-5 Mei 2021) dan H+7 peniadaan mudik (18-24 Mei 2021). Adendum ini diteken pada 21 April 2021.',
+    'https://pbs.twimg.com/profile_images/1269730653/image_400x400.jpg',
+    1,
+    '2021-04-21 05:24:04',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    6,
+    'Ini Dia 2 Orang yang Didakwa Rugikan Negara Rp 63 M',
+    'aku-anak-bau-bau.html',
+    1,
+    'Polemik Kamus Sejarah Makin Panjang karena Sosok Gus Dur Juga Hilang\r\n\r\nSeperti diketahui, kontroversi kamus sejarah ini awalnya muncul setelah dokumen itu beredar secara daring. Sejumlah pihak protes ke Kemendikbud karena tak ada pembahasan terkait pendiri Nahdlatul Ulama, KH Hasyim Asy\'ari.\r\n\r\nTernyata, kamus sejarah itu juga tidak menceritakan sosok-sosok lain yang berperan di sejarah Indonesia. Salah satunya adalah Presiden ke-4 RI, Abdurrahman Wahid (Gus Dur). Hal ini pun diprotes NU.\r\n\r\n\"Nama Gus Dur tidak dimasukkan ke jajaran tokoh yang ada. Nama Gus Dur hanya muncul sebagai pelengkap sejarah beberapa tokoh di antaranya tokoh Ali Alatas yang ditunjuk sebagai Penasehat Menteri Luar Negeri pada masa pemerintahan Gus Dur. Selain itu nama Gus Dur digunakan untuk melengkapi sejarah tokoh Megawati Sukarnoputri dan Widjojo Nitisastro,\" kata Sekretaris Pengurus Cabang Nahdlatul Ulama (PCNU) Kabupaten Pringsewu, Lampung, Muhammad Faizin, seperti dikutip di situs nu.or.id, Rabu (21/4/2021).\r\n\r\nSelain itu, Faizin mengaku heran adanya sosok Abu Bakar Ba\'asyir yang justru dimuat dalam kamus tersebut. Diketahui, Abu Bakar Ba\'asyir merupakan mantan narapidana kasus terorisme.\r\n\r\n\"Justru dalam buku ini, ada beberapa nama yang dipertanyakan kemunculannya oleh masyarakat di antaranya sosok Abu Bakar Ba\'asyir yang termuat di halaman 11. Sosok mantan narapidana kasus terorisme yang menolak membuat pernyataan tertulis setia pada ideologi Pancasila justru muncul pada buku yang diterbitkan oleh Direktorat Sejarah Direktorat Jenderal Kebudayaan Kementerian Pendidikan dan Kebudayaan ini,\" ujarnya.\r\n\r\nHal ini juga memunculkan kekecewaan bagi Komisi X DPR yang membidangi pendidikan. Ketua Komisi X DPR, Syaiful Huda, mengaku jengkel.\r\n\r\n\"Sekali lagi memang kita dibikin jengkel betul ini, kita dibikin kecewa berat atas penerbitan buku Kamus Sejarah Indonesia ini,\" kata Huda kepada wartawan, Rabu (21/4/2021).\r\n\r\nKemendikbud sudah memberi penjelasan soal hal ini. Mendikbud Nadiem Makarim pun sudah angkat bicara.\r\n',
+    'https://akcdn.detik.net.id/community/media/visual/2021/04/20/nadiem-makarim-unggah-foto-bareng-megawati_169.jpeg?w=700&q=90',
+    1,
+    '2021-04-21 06:45:16',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    8,
+    'Polemik Ceramah Tengku Zulkarnain soal Surgaa dan Warna Kulit',
+    'tak-kuasa-menahan-tangis1.html',
+    2,
+    'Lebih lanjut, Syafrin menjelaskan SIKM Jakarta berlaku pada periode 6-17 Mei. Masyarakat pada periode tersebut wajib menunjukkan SIKM ketika hendak keluar dan masuk Ibu Kota.\r\n\r\n\"SIKM berlaku mulai tanggal 6-17 Mei 2021,\" katanya.\r\n\r\nSebelumnya diberitakan, pemerintah lewat Satgas Penanganan Corona menerbitkan adendum (tambahan) SE 13/2021 tentang Peniadaan Mudik Hari Raya Idulfitri Tahun 1442 Hijriah dan Upaya Pengendalian Penyebaran Corona Virus Disease 2019 (COVID-19) Selama Bulan Suci Ramadan 1442 Hijriah. Aturan ini berlaku pada H-14 peniadaan mudik (22 April-5 Mei 2021) dan H+7 peniadaan mudik (18-24 Mei 2021). Adendum ini diteken pada 21 April 2021.',
+    'https://akcdn.detik.net.id/community/media/visual/2021/04/20/nadiem-makarim-unggah-foto-bareng-megawati_169.jpeg?w=700&q=90',
+    1,
+    '2021-04-21 06:50:03',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    9,
+    'Polemik Ceramah Tengku Zulkarnain soal Surga dan Warna Kulita',
+    'aku-anak-bau-bau2.html',
+    1,
+    'Polemik Kamus Sejarah Makin Panjang karena Sosok Gus Dur Juga Hilang\r\n\r\nSeperti diketahui, kontroversi kamus sejarah ini awalnya muncul setelah dokumen itu beredar secara daring. Sejumlah pihak protes ke Kemendikbud karena tak ada pembahasan terkait pendiri Nahdlatul Ulama, KH Hasyim Asy\'ari.\r\n\r\nTernyata, kamus sejarah itu juga tidak menceritakan sosok-sosok lain yang berperan di sejarah Indonesia. Salah satunya adalah Presiden ke-4 RI, Abdurrahman Wahid (Gus Dur). Hal ini pun diprotes NU.\r\n\r\n\"Nama Gus Dur tidak dimasukkan ke jajaran tokoh yang ada. Nama Gus Dur hanya muncul sebagai pelengkap sejarah beberapa tokoh di antaranya tokoh Ali Alatas yang ditunjuk sebagai Penasehat Menteri Luar Negeri pada masa pemerintahan Gus Dur. Selain itu nama Gus Dur digunakan untuk melengkapi sejarah tokoh Megawati Sukarnoputri dan Widjojo Nitisastro,\" kata Sekretaris Pengurus Cabang Nahdlatul Ulama (PCNU) Kabupaten Pringsewu, Lampung, Muhammad Faizin, seperti dikutip di situs nu.or.id, Rabu (21/4/2021).\r\n\r\nSelain itu, Faizin mengaku heran adanya sosok Abu Bakar Ba\'asyir yang justru dimuat dalam kamus tersebut. Diketahui, Abu Bakar Ba\'asyir merupakan mantan narapidana kasus terorisme.\r\n\r\n\"Justru dalam buku ini, ada beberapa nama yang dipertanyakan kemunculannya oleh masyarakat di antaranya sosok Abu Bakar Ba\'asyir yang termuat di halaman 11. Sosok mantan narapidana kasus terorisme yang menolak membuat pernyataan tertulis setia pada ideologi Pancasila justru muncul pada buku yang diterbitkan oleh Direktorat Sejarah Direktorat Jenderal Kebudayaan Kementerian Pendidikan dan Kebudayaan ini,\" ujarnya.\r\n\r\nHal ini juga memunculkan kekecewaan bagi Komisi X DPR yang membidangi pendidikan. Ketua Komisi X DPR, Syaiful Huda, mengaku jengkel.\r\n\r\n\"Sekali lagi memang kita dibikin jengkel betul ini, kita dibikin kecewa berat atas penerbitan buku Kamus Sejarah Indonesia ini,\" kata Huda kepada wartawan, Rabu (21/4/2021).\r\n\r\nKemendikbud sudah memberi penjelasan soal hal ini. Mendikbud Nadiem Makarim pun sudah angkat bicara.\r\n',
+    'https://akcdn.detik.net.id/community/media/visual/2021/04/20/nadiem-makarim-unggah-foto-bareng-megawati_169.jpeg?w=700&q=90',
+    1,
+    '2021-04-21 06:45:16',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    10,
+    'Polemik Ceramah Tengku Zulkarnain soal Surga dan Warna Kulit',
+    'tak-kuasa-menahan-tangis3.html',
+    2,
+    'Lebih lanjut, Syafrin menjelaskan SIKM Jakarta berlaku pada periode 6-17 Mei. Masyarakat pada periode tersebut wajib menunjukkan SIKM ketika hendak keluar dan masuk Ibu Kota.\r\n\r\n\"SIKM berlaku mulai tanggal 6-17 Mei 2021,\" katanya.\r\n\r\nSebelumnya diberitakan, pemerintah lewat Satgas Penanganan Corona menerbitkan adendum (tambahan) SE 13/2021 tentang Peniadaan Mudik Hari Raya Idulfitri Tahun 1442 Hijriah dan Upaya Pengendalian Penyebaran Corona Virus Disease 2019 (COVID-19) Selama Bulan Suci Ramadan 1442 Hijriah. Aturan ini berlaku pada H-14 peniadaan mudik (22 April-5 Mei 2021) dan H+7 peniadaan mudik (18-24 Mei 2021). Adendum ini diteken pada 21 April 2021.',
+    'https://akcdn.detik.net.id/community/media/visual/2021/04/20/nadiem-makarim-unggah-foto-bareng-megawati_169.jpeg?w=700&q=90',
+    1,
+    '2021-04-21 06:50:03',
+    'true'
+  );
+INSERT INTO
+  `zolah_berita_detail` (
+    `id_berita`,
+    `judul_berita`,
+    `seo_url`,
+    `id_kategori`,
+    `isi_berita`,
+    `gambar`,
+    `id_user`,
+    `waktu_berita`,
+    `status`
+  )
+VALUES
+  (
+    11,
+    'Polemik Ceramah Tengku Zulkarnain soal Surga dan Warna Kulitq',
+    'tak-kuasa-menahan-tangis34.html',
+    2,
+    'Lebih lanjut, Syafrin menjelaskan SIKM Jakarta berlaku pada periode 6-17 Mei. Masyarakat pada periode tersebut wajib menunjukkan SIKM ketika hendak keluar dan masuk Ibu Kota.\r\n\r\n\"SIKM berlaku mulai tanggal 6-17 Mei 2021,\" katanya.\r\n\r\nSebelumnya diberitakan, pemerintah lewat Satgas Penanganan Corona menerbitkan adendum (tambahan) SE 13/2021 tentang Peniadaan Mudik Hari Raya Idulfitri Tahun 1442 Hijriah dan Upaya Pengendalian Penyebaran Corona Virus Disease 2019 (COVID-19) Selama Bulan Suci Ramadan 1442 Hijriah. Aturan ini berlaku pada H-14 peniadaan mudik (22 April-5 Mei 2021) dan H+7 peniadaan mudik (18-24 Mei 2021). Adendum ini diteken pada 21 April 2021.',
+    'https://akcdn.detik.net.id/community/media/visual/2021/04/20/nadiem-makarim-unggah-foto-bareng-megawati_169.jpeg?w=700&q=90',
+    1,
+    '2021-04-21 06:50:03',
+    'true'
+  );
+
+# ------------------------------------------------------------
+# DATA DUMP FOR TABLE: zolah_kategori
+# ------------------------------------------------------------
+
+INSERT INTO
+  `zolah_kategori` (`id_kategori`, `nama_kategori`)
+VALUES
+  (1, 'Politik');
+INSERT INTO
+  `zolah_kategori` (`id_kategori`, `nama_kategori`)
+VALUES
+  (2, 'Bisnis');
+INSERT INTO
+  `zolah_kategori` (`id_kategori`, `nama_kategori`)
+VALUES
+  (3, 'Sport');
+INSERT INTO
+  `zolah_kategori` (`id_kategori`, `nama_kategori`)
+VALUES
+  (4, 'Teknologi');
+
+# ------------------------------------------------------------
+# DATA DUMP FOR TABLE: zolah_user_login
+# ------------------------------------------------------------
+
+INSERT INTO
+  `zolah_user_login` (
+    `id_user`,
+    `nama_lengkap`,
+    `username`,
+    `password`,
+    `level_access`,
+    `waktu`
+  )
+VALUES
+  (
+    1,
+    'Muh ridwan',
+    'diwan',
+    '12345',
+    'admin',
+    '2021-04-21 08:01:32'
+  );
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
